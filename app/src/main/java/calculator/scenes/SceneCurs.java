@@ -18,7 +18,6 @@ public class SceneCurs {
     private static final double USD_TO_IDR = 14866.65; // JUNE 8th
     private static final double MYR_TO_IDR = 3226.62;
     private static final double SGD_TO_IDR = 11023.64;
-
     private Label resultLabel;
 
     private Stage stage;
@@ -44,7 +43,7 @@ public class SceneCurs {
         tInput.setStyle("-fx-alignment: center; -fx-text-fill: rgb(20,29,38); -fx-max-width: 120px; -fx-border-color: rgb(20,29,38); -fx-border-width: 0 0 2px 0; -fx-background-color: #ffffff");
 
         Button calculateB = new Button("Convert");
-        calculateB.setStyle("-fx-background-color: rgb(20,29,38); -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-padding: 0.3em 100px; -fx-cursor: hand;");
+        calculateB.setStyle("-fx-background-color: rgb(20,29,38); -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-padding: 0.3em 110px; -fx-cursor: hand;");
         calculateB.setOnAction(e -> convertCurrency(currencyDm.getValue(), Double.parseDouble(tInput.getText())));
 
         Button clearB = new Button("Clear");

@@ -23,7 +23,7 @@ public class CategoryScene {
         Text tTitle = new Text("Choose The Calculator");
         tTitle.setStyle("-fx-fill: rgb(20,29,38); -fx-font-weight: bold; -fx-font-size: 2em;");
 
-        // BUTTON
+        // BUTTONS
         Button bCalculator1 = new Button("Curs Converter");
         bCalculator1.setStyle("-fx-background-color: rgb(20,29,38); -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-padding: 0.5em 2em; -fx-cursor: hand;");
 
@@ -36,10 +36,19 @@ public class CategoryScene {
         bCalculator2.setStyle("-fx-background-color: rgb(20,29,38); -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-padding: 0.5em 2em; -fx-cursor: hand;");
 
         bCalculator2.setOnAction(v -> {
-            
+            SceneBmi bmi = new SceneBmi(stage);
+            bmi.show();
         });
 
-        VBox sectionRight = new VBox(tTitle, bCalculator1, bCalculator2);
+        Button bCalculator3 = new Button("Profit and Loss");
+        bCalculator3.setStyle("-fx-background-color: rgb(20,29,38); -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-padding: 0.5em 2em; -fx-cursor: hand;");
+
+        bCalculator3.setOnAction(v -> {
+            ScenePL plScene = new ScenePL(stage);
+            plScene.show();
+        });
+
+        VBox sectionRight = new VBox(tTitle, bCalculator1, bCalculator2, bCalculator3);
         sectionRight.setAlignment(Pos.CENTER);
         sectionRight.setSpacing(15);
         sectionRight.setPrefWidth(30);
