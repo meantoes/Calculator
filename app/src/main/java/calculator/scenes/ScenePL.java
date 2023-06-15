@@ -90,6 +90,8 @@ public class ScenePL {
             } else if (costP > sellingP) {
                 double loss = costP - sellingP;
                 resultLabel.setText(String.format("Your Loss: Rp.%.2f", loss));
+            } else {
+                resultLabel.setText("You neither lose nor profit.");
             }
             
         } catch (NumberFormatException e) {

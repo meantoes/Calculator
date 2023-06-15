@@ -15,9 +15,18 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class SceneCurs {
-    private static final double USD_TO_IDR = 14866.65; // JUNE 8th
-    private static final double MYR_TO_IDR = 3226.62;
+    private static final double EUR_TO_IDR = 16010.83; // JUNE 11th
+    private static final double USD_TO_IDR = 14866.65;
     private static final double SGD_TO_IDR = 11023.64;
+    private static final double AUD_TO_IDR = 10038.87;
+    private static final double MYR_TO_IDR = 3226.62;
+    private static final double CNY_TO_IDR = 2088.62;
+    private static final double THB_TO_IDR = 430.38;
+    private static final double JPY_TO_IDR = 106.84;
+    private static final double KRW_TO_IDR = 11.56;
+    private static final double VND_TO_IDR = 0.63;
+    
+    
     private Label resultLabel;
 
     private Stage stage;
@@ -29,7 +38,7 @@ public class SceneCurs {
 
     public void show() {
         ChoiceBox<String> currencyDm = new ChoiceBox<>();
-        currencyDm.getItems().addAll("USD", "MYR", "SGD");
+        currencyDm.getItems().addAll("EUR", "USD", "SGD", "AUD", "MYR", "CNY", "THB", "JPY", "KRW", "VND");
         currencyDm.getSelectionModel().selectFirst();
         currencyDm.setStyle("-fx-border-color: rgb(20,29,38); -fx-border-width: 2px; -fx-text-fill: #ffffff; -fx-background-color: white; -fx-font-weight: bold; -fx-padding: 0 2em; -fx-cursor: hand;");
 
@@ -85,14 +94,35 @@ public class SceneCurs {
         try {
             double result;
             switch (currency) {
+                case "EUR":
+                    result = amount * EUR_TO_IDR;
+                    break;
                 case "USD":
                     result = amount * USD_TO_IDR;
+                    break;
+                case "SGD":
+                    result = amount * SGD_TO_IDR;
+                    break;
+                case "AUD":
+                    result = amount * AUD_TO_IDR;
                     break;
                 case "MYR":
                     result = amount * MYR_TO_IDR;
                     break;
-                case "SGD":
-                    result = amount * SGD_TO_IDR;
+                case "CNY":
+                    result = amount * CNY_TO_IDR;
+                    break;
+                case "THB":
+                    result = amount * THB_TO_IDR;
+                    break;
+                case "JPY":
+                    result = amount * JPY_TO_IDR;
+                    break;
+                case "KRW":
+                    result = amount * KRW_TO_IDR;
+                    break;
+                case "VND":
+                    result = amount * VND_TO_IDR;
                     break;
                 default:
                     result = 0;
